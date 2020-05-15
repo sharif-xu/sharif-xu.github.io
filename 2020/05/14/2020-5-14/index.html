@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s1.ax1x.com/2020/05/15/YrDnk6.png">
 <meta property="article:published_time" content="2020-05-15T02:13:22.000Z">
-<meta property="article:modified_time" content="2020-05-15T06:25:13.158Z">
+<meta property="article:modified_time" content="2020-05-15T23:12:01.322Z">
 <meta property="article:author" content="Sharif Xu">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Git">
@@ -190,10 +190,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-14 19:13:22 / Modified: 23:25:13" itemprop="dateCreated datePublished" datetime="2020-05-14T19:13:22-07:00">2020-05-14</time>
+              <time title="Created: 2020-05-14 19:13:22" itemprop="dateCreated datePublished" datetime="2020-05-14T19:13:22-07:00">2020-05-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-15 16:12:01" itemprop="dateModified" datetime="2020-05-15T16:12:01-07:00">2020-05-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,12 +254,12 @@
 
 <p>此时你的Hexo主题框架已经被推送至远端仓库。</p>
 <p>接下来考虑同步主题文件夹，首先fork你想使用的第三方文件夹到个人仓库。在theme根目录下执行</p>
-<figure class="highlight shell"><figcaption><span>l</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;远端仓库地址&gt;</span><br><span class="line">cd &lt;第三方主题文件夹&gt;</span><br><span class="line">git checkout -b customize #新建customize分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你修改过第三方主题，可以将你修改后的文件夹覆盖到当前文件夹</span></span><br><span class="line">git add . </span><br><span class="line">git commit -m "Start sync my customized theme folder"</span><br><span class="line">git branch --set-upstream-to origin/customize</span><br><span class="line">git push -u origin customize</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;远端仓库地址&gt;</span><br><span class="line">cd &lt;第三方主题文件夹&gt;</span><br><span class="line">git checkout -b customize #新建customize分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你修改过第三方主题，可以将你修改后的文件夹覆盖到当前文件夹</span></span><br><span class="line">git add . </span><br><span class="line">git commit -m "Start sync my customized theme folder"</span><br><span class="line">git branch --set-upstream-to origin/customize</span><br><span class="line">git push -u origin customize</span><br></pre></td></tr></table></figure>
 
 <p>这样你的远端仓库就包含了最起码两个分支，master和customize，之后如果需要更新，可以通过merge两个分支，并处理冲突文件的方式解决。</p>
 <h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p><strong>以下操作在你的第二个平台上进行，并确定已安装node.js &amp; npm。</strong></p>
 <p>在你想要同步博客的文件夹下执行</p>
-<figure class="highlight shell"><figcaption><span>l</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;远端博客仓库地址&gt;</span><br><span class="line">cd # 进入到主题文件夹</span><br><span class="line">git clone &lt;远端主题仓库地址&gt;</span><br><span class="line">cd # 进入到第三方主题文件夹</span><br><span class="line">git checkout customize #切换到customize分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 回到 hexo 根目录，安装依赖</span></span><br><span class="line">npm install hexo</span><br><span class="line">npm install hexo-deployer-git</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;远端博客仓库地址&gt;</span><br><span class="line">cd # 进入到主题文件夹</span><br><span class="line">git clone &lt;远端主题仓库地址&gt;</span><br><span class="line">cd # 进入到第三方主题文件夹</span><br><span class="line">git checkout customize #切换到customize分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 回到 hexo 根目录，安装依赖</span></span><br><span class="line">npm install hexo</span><br><span class="line">npm install hexo-deployer-git</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
 <p>至此应该可以在终端中输入hexo来验证一下是否安装成功，不需要执行<code>hexo init</code>。</p>
 <p>之后，每次发布新博文之后依次执行</p>
