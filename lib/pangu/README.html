@@ -1,0 +1,105 @@
+<h1 id="為什麼你們就是不能加個空格呢？"><a href="#為什麼你們就是不能加個空格呢？" class="headerlink" title="為什麼你們就是不能加個空格呢？"></a>為什麼你們就是不能加個空格呢？</h1><p><a href="https://www.jsdelivr.com/package/npm/pangu" target="_blank" rel="noopener"><img src="https://data.jsdelivr.com/v1/package/npm/pangu/badge" alt=""></a><br><a href="https://travis-ci.org/vinta/pangu.js" target="_blank" rel="noopener"><img src="https://img.shields.io/travis/vinta/pangu.js.svg?style=flat-square" alt=""></a><br><a href="https://codecov.io/github/vinta/pangu.js" target="_blank" rel="noopener"><img src="https://img.shields.io/codecov/c/github/vinta/pangu.js/master.svg?style=flat-square" alt=""></a><br><a href="https://www.npmjs.com/package/pangu" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/v/pangu.svg?style=flat-square" alt=""></a><br><a href="https://vinta.ws/code/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/made%20with-%e2%9d%a4-ff69b4.svg?style=flat-square" alt=""></a></p>
+<p>如果你跟我一樣，每次看到網頁上的中文字和英文、數字、符號擠在一塊，就會坐立難安，忍不住想在它們之間加個空格。這個外掛（支援 Chrome 和 Firefox）正是你在網路世界走跳所需要的東西，它會自動替你在網頁中所有的中文字和半形的英文、數字、符號之間插入空白。</p>
+<p>漢學家稱這個空白字元為「盤古之白」，因為它劈開了全形字和半形字之間的混沌。另有研究顯示，打字的時候不喜歡在中文和英文之間加空格的人，感情路都走得很辛苦，有七成的比例會在 34 歲的時候跟自己不愛的人結婚，而其餘三成的人最後只能把遺產留給自己的貓。畢竟愛情跟書寫都需要適時地留白。</p>
+<p>與大家共勉之。</p>
+<p><a href="https://chrome.google.com/webstore/detail/paphcfdffjnbcgkokihcdjliihicmbpd" target="_blank" rel="noopener"><img src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_340x96.png" alt=""></a></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="For-Users"><a href="#For-Users" class="headerlink" title="For Users"></a>For Users</h3><ul>
+<li><a href="https://chrome.google.com/webstore/detail/paphcfdffjnbcgkokihcdjliihicmbpd" target="_blank" rel="noopener">Google Chrome</a> (<strong>2019-02-09 UPDATED</strong>)</li>
+<li><a href="https://github.com/vinta/pangu.js/blob/master/browser_extensions/firefox/paranoid-auto-spacing.user.js" target="_blank" rel="noopener">Mozilla Firefox</a> (<strong>2019-02-09 UPDATED</strong>)</li>
+</ul>
+<h3 id="For-Developers"><a href="#For-Developers" class="headerlink" title="For Developers"></a>For Developers</h3><ul>
+<li><p>Official supports:</p>
+<ul>
+<li><a href="https://github.com/vinta/pangu" target="_blank" rel="noopener">pangu.go</a> (Go)</li>
+<li><a href="https://github.com/vinta/pangu.java" target="_blank" rel="noopener">pangu.java</a> (Java)</li>
+<li><a href="https://github.com/vinta/pangu.js" target="_blank" rel="noopener">pangu.js</a> (JavaScript)</li>
+<li><a href="https://github.com/vinta/pangu.py" target="_blank" rel="noopener">pangu.py</a> (Python)</li>
+<li><a href="https://github.com/vinta/pangu.space" target="_blank" rel="noopener">pangu.space</a> (Web API)</li>
+</ul>
+</li>
+<li><p>Community supports:</p>
+<ul>
+<li><a href="https://github.com/coldnew/pangu.clj" target="_blank" rel="noopener">pangu.clj</a> (Clojure)</li>
+<li><a href="https://github.com/SemonCat/pangu.dart" target="_blank" rel="noopener">pangu.dart</a> (Dart)</li>
+<li><a href="https://github.com/cataska/pangu.ex" target="_blank" rel="noopener">pangu.ex</a> (Elixir)</li>
+<li><a href="https://github.com/Cee/pangu.objective-c" target="_blank" rel="noopener">pangu.objective-c</a> (Objective-C)</li>
+<li><a href="https://github.com/Kunr/pangu.php" target="_blank" rel="noopener">pangu.php</a> (PHP)</li>
+<li><a href="https://github.com/dlackty/pangu.rb" target="_blank" rel="noopener">pangu.rb</a> (Ruby)</li>
+<li><a href="https://github.com/airt/pangu.rs" target="_blank" rel="noopener">pangu.rs</a> (Rust)</li>
+<li><a href="https://github.com/X140Yu/pangu.Swift" target="_blank" rel="noopener">pangu.swift</a> (Swift)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><pre><code class="bash">$ npm install pangu --save
+<span class="comment"># or</span>
+$ yarn add pangu</code></pre>
+<h3 id="Browser"><a href="#Browser" class="headerlink" title="Browser"></a>Browser</h3><p>Files are located in <code>./node_modules/pangu/dist/browser/</code>.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"pangu.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="actionscript">  <span class="keyword">const</span> text = pangu.spacing(<span class="string">"當你凝視著bug，bug也凝視著你"</span>);</span>
+<span class="actionscript">  <span class="comment">// text = '當你凝視著 bug，bug 也凝視著你'</span></span>
+
+<span class="actionscript">  pangu.spacingElementById(<span class="string">'main'</span>);</span>
+<span class="actionscript">  pangu.spacingElementByClassName(<span class="string">'comment'</span>);</span>
+<span class="actionscript">  pangu.spacingElementByTagName(<span class="string">'p'</span>);</span>
+
+<span class="javascript">  <span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, () =&gt; {</span>
+<span class="actionscript">    <span class="comment">// listen to any DOM change and automatically perform spacing via MutationObserver()</span></span>
+    pangu.autoSpacingPage();
+  });
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p><code>pangu.js</code> is also available on <a href="https://www.jsdelivr.com/package/npm/pangu" target="_blank" rel="noopener">jsDelivr</a> and <a href="https://cdnjs.com/libraries/pangu" target="_blank" rel="noopener">cdnjs</a>:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p>Learn more on <a href="https://www.npmjs.com/package/pangu" target="_blank" rel="noopener">npm</a>.</p>
+<pre><code class="js"><span class="keyword">const</span> pangu = <span class="built_in">require</span>(<span class="string">'pangu'</span>);
+
+<span class="keyword">const</span> text = pangu.spacing(<span class="string">'與PM戰鬥的人，應當小心自己不要成為PM'</span>);
+<span class="comment">// text = '與 PM 戰鬥的人，應當小心自己不要成為 PM'</span>
+
+pangu.spacingFile(<span class="string">'/path/to/text.txt'</span>, (err, data) =&gt; {
+  <span class="built_in">console</span>.log(data);
+});
+
+pangu.spacingFile(<span class="string">'/path/to/text.txt'</span>)
+  .then(<span class="function">(<span class="params">data</span>) =&gt;</span> {
+    <span class="built_in">console</span>.log(data);
+  })
+  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> {
+    <span class="built_in">console</span>.error(err);
+  });
+
+<span class="keyword">const</span> data = pangu.spacingFileSync(<span class="string">'/path/to/text.txt'</span>);</code></pre>
+<p>You <strong>SHOULD NOT</strong> use <code>pangu.js</code> directly to spacing Markdown documents, this library is specially designed for HTML webpages and plain texts without any markup language. See <a href="https://github.com/vinta/pangu.js/issues/127" target="_blank" rel="noopener">issue #127</a>.</p>
+<h3 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h3><pre><code class="console"><span class="meta">$</span><span class="bash"> pangu <span class="string">"不能信任那些Terminal或Editor用白底的人"</span></span>
+不能信任那些 Terminal 或 Editor 用白底的人
+
+<span class="meta">$</span><span class="bash"> pangu --<span class="built_in">help</span></span>
+usage: pangu [-h] [-v] [-t] [-f] text_or_path
+
+pangu.js -- Paranoid text spacing for good readability, to automatically insert whitespace
+between CJK and half-width characters (alphabetical letters, numerical digits and symbols).
+
+positional arguments:
+  text_or_path   the text or file path to perform spacing
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --version  show program's version number and exit
+  -t, --text     specify the input value is a text
+  -f, --file     specify the input value is a file path</code></pre>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>You need to install <a href="https://vinta.ws/code/install-node-js-via-nvm.html" target="_blank" rel="noopener">Node.js</a>.</p>
+<pre><code class="bash">$ git <span class="built_in">clone</span> git@github.com:vinta/pangu.js.git &amp;&amp; <span class="built_in">cd</span> pangu.js
+$ npm install
+$ npm run <span class="built_in">test</span></code></pre>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>.</p>
+<h2 id="Author"><a href="#Author" class="headerlink" title="Author"></a>Author</h2><ul>
+<li>GitHub: <a href="https://github.com/vinta" target="_blank" rel="noopener">@vinta</a></li>
+<li>Twitter: <a href="https://twitter.com/vinta" target="_blank" rel="noopener">@vinta</a></li>
+<li>Website: <a href="https://vinta.ws/code/" target="_blank" rel="noopener">vinta.ws</a></li>
+</ul>
