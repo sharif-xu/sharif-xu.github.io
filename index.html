@@ -250,13 +250,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="利用一个栈实现以下递归函数的非递归计算："><a href="#利用一个栈实现以下递归函数的非递归计算：" class="headerlink" title="利用一个栈实现以下递归函数的非递归计算："></a>利用一个栈实现以下递归函数的非递归计算：</h5><script type="math/tex; mode=display">
+          <h5 id="利用一个栈实现以下递归函数的非递归计算">利用一个栈实现以下递归函数的非递归计算：</h5>
+<p><span class="math display">\[
 P_n(x)=\left\{
 \begin{array}{aligned}
-1, && n=0 \\
-2x, && n=1\\
-2xP_{n-1}(x)-2(n-1)P_{n-2}(x), && n>1
-\end{array} \right.</script><p> 首先我们定义栈的初始结构，栈应该要记录每次对应的n值，和函数值。</p>
+1, &amp;&amp; n=0 \\
+2x, &amp;&amp; n=1\\
+2xP_{n-1}(x)-2(n-1)P_{n-2}(x), &amp;&amp; n&gt;1
+\end{array} \right.
+\]</span></p>
+<p>首先我们定义栈的初始结构，栈应该要记录每次对应的n值，和函数值。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">double</span> val;</span><br><span class="line">&#125; st[maxsize];</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -361,7 +364,7 @@ P_n(x)=\left\{
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>13 mins.</span>
+              <span>14 mins.</span>
             </span>
 
         </div>
@@ -373,7 +376,8 @@ P_n(x)=\left\{
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。"><a href="#设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。" class="headerlink" title="设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。"></a>设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。</h5><p>算法的代码描述如下：</p>
+          <h5 id="设计一个递归算法删除不带头结点的单链表l中所有值为x的结点">设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。</h5>
+<p>算法的代码描述如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleteRecursive</span><span class="params">(LNode &amp;p, Elemtype x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (p == null) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (p-&gt;data == x) &#123;</span><br><span class="line">    LNode temp = p; </span><br><span class="line">    p = p-&gt;next; <span class="comment">//在此处思考上层递归，会补链</span></span><br><span class="line">    <span class="built_in">free</span>(temp); </span><br><span class="line">    deleteRecursive(p, x);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    deleteRecursive(p-&gt;next, x);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -471,7 +475,7 @@ P_n(x)=\left\{
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>6.9k</span>
+              <span>7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -490,8 +494,9 @@ P_n(x)=\left\{
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="从顺序表中删除具有最小值的元素-假设唯一-并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。"><a href="#从顺序表中删除具有最小值的元素-假设唯一-并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。" class="headerlink" title="从顺序表中删除具有最小值的元素(假设唯一)并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。"></a>从顺序表中删除具有最小值的元素(假设唯一)并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。</h5><p>算法的代码描述如下：</p>
-   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Elemtype <span class="title">deleteMin</span><span class="params">(Sqlist &amp;arr)</span> </span>&#123; <span class="comment">//可以考虑形参中引入 &amp;min，</span></span><br><span class="line">  <span class="keyword">if</span> (arr.length == <span class="number">0</span> &amp;&amp; arr == null) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The array is empty."</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    Elemtype <span class="built_in">min</span> = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= arr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] &lt;= <span class="built_in">min</span>) &#123;</span><br><span class="line">        <span class="built_in">min</span> = arr[i];</span><br><span class="line">        index = i;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[index] = arr[arr.length - <span class="number">1</span>];</span><br><span class="line">    arr.length--;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h5 id="从顺序表中删除具有最小值的元素假设唯一并由函数返回被删元素的值空出的位置由最后一个元素填补若顺序表为空则显示出错信息并退出运行">从顺序表中删除具有最小值的元素(假设唯一)并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。</h5>
+<p>算法的代码描述如下：</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Elemtype <span class="title">deleteMin</span><span class="params">(Sqlist &amp;arr)</span> </span>&#123; <span class="comment">//可以考虑形参中引入 &amp;min，</span></span><br><span class="line">  <span class="keyword">if</span> (arr.length == <span class="number">0</span> &amp;&amp; arr == null) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The array is empty."</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    Elemtype <span class="built_in">min</span> = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= arr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] &lt;= <span class="built_in">min</span>) &#123;</span><br><span class="line">        <span class="built_in">min</span> = arr[i];</span><br><span class="line">        index = i;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[index] = arr[arr.length - <span class="number">1</span>];</span><br><span class="line">    arr.length--;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/23/Linear-List-Sequence/#more" rel="contents">
@@ -588,7 +593,7 @@ P_n(x)=\left\{
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.7k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -607,13 +612,13 @@ P_n(x)=\left\{
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>对于Fibonacci数列</p>
-<script type="math/tex; mode=display">
+          <p>对于Fibonacci数列 <span class="math display">\[
 F(n)=\left\{
 \begin{array}{aligned}
-1 && n=0,1 \\
-F(n-1)+F(n-2) && n>1
-\end{array} \right.</script><p>我们可以采用递归以及非递归的方法对其进行求解。</p>
+1 &amp;&amp; n=0,1 \\
+F(n-1)+F(n-2) &amp;&amp; n&gt;1
+\end{array} \right.
+\]</span> 我们可以采用递归以及非递归的方法对其进行求解。</p>
 <p>下面分别用两种方法求解，并分析算法的时间复杂度。</p>
           <!--noindex-->
             <div class="post-button">
@@ -733,10 +738,12 @@ F(n-1)+F(n-2) && n>1
           <blockquote>
 <p>在来到Berkeley之前真的没有想到之后的一切会是这样发展。疫情改变了这个世界的模样，也改变了我们每个人的生活。</p>
 </blockquote>
-<p>​    因为决定前往 Berkeley 交换一个学期，在成电考完最后一门的第二天，我就急匆匆的踏上飞往美国的航班。在此期间，父母放不下牵挂，请假来到成都，陪伴我一同收拾行李，一同准备接下来的行程。可以说，家人的支持与陪伴是所有海外游子，独身一人不断拼搏的最坚实的后盾。</p>
-<p>​    初到加州，明媚的阳光是它留给我们的一印象。伯克利近海，伴随着清新的海风，我们的学习生活正式开始。不过在此之前，BGA的老师们，带着我们初逛旧金山。我们徒步走过了金门大桥，在 Pier 39 领略了旧金山特有的码头与水手文化，结识了可爱的海豹们。一切都是如此的祥和，我们期待着接下来Berkeley给我们带来的惊喜。</p>
-<p><img data-src="https://i.loli.net/2020/06/09/sdOJyT1teVgmr2o.jpg" alt=""></p>
-<center>金门大桥</center>
+<p>​ 因为决定前往 Berkeley 交换一个学期，在成电考完最后一门的第二天，我就急匆匆的踏上飞往美国的航班。在此期间，父母放不下牵挂，请假来到成都，陪伴我一同收拾行李，一同准备接下来的行程。可以说，家人的支持与陪伴是所有海外游子，独身一人不断拼搏的最坚实的后盾。</p>
+<p>​ 初到加州，明媚的阳光是它留给我们的一印象。伯克利近海，伴随着清新的海风，我们的学习生活正式开始。不过在此之前，BGA的老师们，带着我们初逛旧金山。我们徒步走过了金门大桥，在 Pier 39 领略了旧金山特有的码头与水手文化，结识了可爱的海豹们。一切都是如此的祥和，我们期待着接下来Berkeley给我们带来的惊喜。</p>
+<p><img data-src="https://i.loli.net/2020/06/09/sdOJyT1teVgmr2o.jpg" /></p>
+<center>
+金门大桥
+</center>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/03/berkeley-memoirs/#more" rel="contents">
@@ -853,7 +860,7 @@ F(n-1)+F(n-2) && n>1
 
       
           <p>本博客使用Hexo框架搭建，并部署在Github上。搭建的时候使用的是Windows平台，但是同时自己平时使用的便携程度更高的MBP，于是思考如何让Hexo能够在多端进行同步，这样就可以用更加轻松的姿势去写博客啦😎</p>
-<p>​    首先这篇文章的前提是你已经搭建了Hexo博客的环境，并且目前需要多台电脑都可编辑同步博客，除此之外，<del>需要你对git有一定的了解。</del></p>
+<p>​ 首先这篇文章的前提是你已经搭建了Hexo博客的环境，并且目前需要多台电脑都可编辑同步博客，除此之外，<del>需要你对git有一定的了解。</del></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/14/Hexo-Mutiagent-Manager/#more" rel="contents">
