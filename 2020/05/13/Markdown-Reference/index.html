@@ -253,13 +253,11 @@
       
         <p>用来记录一些markdown语法格式，便于迅速查阅。</p>
 <a id="more"></a>
-<h3 id="文字格式"><strong>文字格式</strong></h3>
-<p><strong>这是文字粗体格式</strong></p>
+<h3 id="文字格式"><a href="#文字格式" class="headerlink" title="文字格式"></a><strong>文字格式</strong></h3><p><strong>这是文字粗体格式</strong></p>
 <p><em>这是文字斜体格式</em></p>
 <p><del>在文字上添加删除线</del></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**这是文字粗体格式**</span></span><br><span class="line"></span><br><span class="line"><span class="emphasis">*这是文字斜体格式*</span></span><br><span class="line"></span><br><span class="line">~~在文字上添加删除线~~</span><br></pre></td></tr></table></figure>
-<h3 id="列表"><strong>列表</strong></h3>
-<ol type="1">
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a><strong>列表</strong></h3><ol>
 <li>有序列表</li>
 <li>有序列表</li>
 <li>有序列表</li>
@@ -267,81 +265,69 @@
 <ul>
 <li>无序列表</li>
 <li>无序列表</li>
-<li>无序列表</li>
+<li>无序列表 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 有序列表</span><br><span class="line">2. 有序列表</span><br><span class="line">3. 有序列表</span><br><span class="line">+ 无序列表</span><br><span class="line">+ 无序列表</span><br><span class="line">+ 无序列表</span><br></pre></td></tr></table></figure>
-<h3 id="图片-链接">图片 &amp; 链接</h3>
-<p><strong>行内式：</strong> <a href="http://sharif-xu.github.io" target="_blank" rel="noopener" title="鼠标悬停文本">blog</a></p>
-<p><strong>参考式1：</strong> <a href="http://sharif-xu.github.io%22鼠标悬停文本%22" target="_blank" rel="noopener">blog</a></p>
-<p><strong>参考式2：</strong> <a href="http://sharif-xu.github.io" target="_blank" rel="noopener" title="鼠标悬停文本">blog</a></p>
-<p><strong>自动链接：&lt;&gt;</strong> <a href="http://sharif-xu.github.io" target="_blank" rel="noopener" class="uri">http://sharif-xu.github.io</a></p>
+<h3 id="图片-amp-链接"><a href="#图片-amp-链接" class="headerlink" title="图片 &amp; 链接"></a>图片 &amp; 链接</h3><p><strong>行内式：</strong><br>  <a href="http://sharif-xu.github.io" target="_blank" rel="noopener" title="鼠标悬停文本">blog</a></p>
+<p><strong>参考式1：</strong><br>  <a href="http://sharif-xu.github.io&quot;鼠标悬停文本&quot;" target="_blank" rel="noopener">blog</a></p>
+<p><strong>参考式2：</strong><br>  <a href="http://sharif-xu.github.io" target="_blank" rel="noopener" title="鼠标悬停文本">blog</a></p>
+<p><strong>自动链接：&lt;&gt;</strong><br>  <a href="http://sharif-xu.github.io" target="_blank" rel="noopener">http://sharif-xu.github.io</a></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">行内式：</span><br><span class="line">  [<span class="string">blog</span>](<span class="link">http://sharif-xu.github.io "鼠标悬停文本"</span>)</span><br><span class="line"></span><br><span class="line">参考式1：</span><br><span class="line">  [<span class="string">blog</span>][<span class="symbol">1</span>]</span><br><span class="line"></span><br><span class="line">[<span class="symbol">1</span>]:<span class="link">http://sharif-xu.github.io"鼠标悬停文本"</span></span><br><span class="line"></span><br><span class="line">参考式2：</span><br><span class="line">  [<span class="string">blog</span>][<span class="symbol"></span>]</span><br><span class="line"></span><br><span class="line">[<span class="symbol">blog</span>]:<span class="link">http://sharif-xu.github.io "鼠标悬停文本"</span></span><br><span class="line"></span><br><span class="line">自动链接：<span class="xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">http:</span>//<span class="attr">sharif-xu.github.io</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="https://s1.ax1x.com/2020/05/31/t3dVS0.png" alt="测试图片" /><figcaption>测试图片</figcaption>
-</figure>
-<div data-align="center">
-<img width = '150' height ='150' src ="https://s1.ax1x.com/2020/05/31/t3dVS0.png"/>
-</div>
-<div data-align="right">
-<img width = '100' height ='100' src ="https://s1.ax1x.com/2020/05/31/t3dVS0.png"/>
-</div>
+<p>   <img data-src="https://s1.ax1x.com/2020/05/31/t3dVS0.png" alt="测试图片"></p>
+<div align=center><img width = '150' height ='150' src ="https://s1.ax1x.com/2020/05/31/t3dVS0.png"/></div>
+
+<div align=right><img width = '100' height ='100' src ="https://s1.ax1x.com/2020/05/31/t3dVS0.png"/></div>
+
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">图片</span>](<span class="link">https://s1.ax1x.com/2020/05/31/t3dVS0.png</span>)</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span> = <span class="string">'150'</span> <span class="attr">height</span> =<span class="string">'150'</span> <span class="attr">src</span> =<span class="string">"https://s1.ax1x.com/2020/05/31/t3dVS0.png"</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">right</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span> = <span class="string">'100'</span> <span class="attr">height</span> =<span class="string">'100'</span> <span class="attr">src</span> =<span class="string">"https://s1.ax1x.com/2020/05/31/t3dVS0.png"</span>/&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="section"># nexT的markdown渲染引擎不支持对图片位置进行控制，默认居中显示，但是可以控制大小</span></span><br></pre></td></tr></table></figure>
-<h3 id="引用">引用</h3>
-<blockquote>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
 <p>引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引</p>
-</blockquote>
-<blockquote>
 <blockquote>
 <p>引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引</p>
 </blockquote>
 <p>引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引</p>
 </blockquote>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引</span><br><span class="line"></span><br><span class="line"><span class="quote">&gt; &gt; 引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引</span></span><br><span class="line">&gt;</span><br><span class="line"><span class="quote">&gt; 引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引用文本引</span></span><br></pre></td></tr></table></figure>
-<h3 id="表格">表格</h3>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><div class="table-container">
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">a</th>
+<tr>
+<th style="text-align:left">a</th>
 <th>b</th>
 <th>c</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">x</td>
+<tr>
+<td style="text-align:left">x</td>
 <td>y</td>
 <td>z</td>
 </tr>
 </tbody>
 </table>
-<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|a|b|c|</span><br><span class="line">|-|-|-|</span><br><span class="line">|x|y|z|</span><br></pre></td></tr></table></figure></p>
-<h3 id="待办标记">待办标记</h3>
-<ul>
+</div>
+   <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|a|b|c|</span><br><span class="line">|-|-|-|</span><br><span class="line">|x|y|z|</span><br></pre></td></tr></table></figure>
+<h3 id="待办标记"><a href="#待办标记" class="headerlink" title="待办标记"></a>待办标记</h3><ul>
 <li>[ ] to-do</li>
-<li>[x] done</li>
+<li><p>[x] done</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>[ ] to-do</span><br><span class="line"><span class="bullet">- </span>[x] done</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>[ ] to-do</span><br><span class="line"><span class="bullet">- </span>[x] done</span><br></pre></td></tr></table></figure></p>
-<h3 id="注脚">注脚</h3>
-<p>markdown<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>， GitHub<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-<p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">markdown[^1]， GitHub[^2]</span><br><span class="line"></span><br><span class="line"><span class="code">    [^1]: Markdown 是一种纯文本标记语言</span></span><br><span class="line"><span class="code">    [^2]: GitHub 是一个代码托管平台</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="流程图">流程图</h3>
-<p>流程图语法参考：<a href="http://flowchart.js.org/" target="_blank" rel="noopener">Reference</a></p>
+<h3 id="注脚"><a href="#注脚" class="headerlink" title="注脚"></a>注脚</h3><p>   markdown<sup><a href="#fn_1" id="reffn_1">1</a></sup>， GitHub<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
+<blockquote id="fn_1">
+<sup>1</sup>. Markdown 是一种纯文本标记语言<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. GitHub 是一个代码托管平台<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+   <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">markdown[^1]， GitHub[^2]</span><br><span class="line"></span><br><span class="line"><span class="code">    [^1]: Markdown 是一种纯文本标记语言</span></span><br><span class="line"><span class="code">    [^2]: GitHub 是一个代码托管平台</span></span><br></pre></td></tr></table></figure>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p>   流程图语法参考：<a href="http://flowchart.js.org/" target="_blank" rel="noopener">Reference</a></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start:&gt;http://www.google.com[blank]</span><br><span class="line">e=&gt;end:&gt;http://www.google.com</span><br><span class="line">op1=&gt;operation: My Operation</span><br><span class="line">sub1=&gt;subroutine: My Subroutine</span><br><span class="line">cond=&gt;condition: Yes</span><br><span class="line">or No?:&gt;http://www.google.com</span><br><span class="line">io=&gt;inputoutput: catch something...</span><br><span class="line">para=&gt;parallel: parallel tasks</span><br><span class="line"></span><br><span class="line">st-&gt;op1-&gt;cond</span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line">cond(no)-&gt;para</span><br><span class="line">para(path1, bottom)-&gt;sub1(right)-&gt;op1</span><br><span class="line">para(path2, top)-&gt;op1</span><br></pre></td></tr></table></figure>
-<h3 id="目录">目录</h3>
-<p>目录在适当位置添加<code>[TOC]</code>后自动生成。</p>
-<h3 id="生成文件夹目录树">生成文件夹目录树</h3>
-<p>首先需要安装tree插件，mac下使用命令</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>   目录在适当位置添加<code>[TOC]</code>后自动生成。</p>
+<h3 id="生成文件夹目录树"><a href="#生成文件夹目录树" class="headerlink" title="生成文件夹目录树"></a>生成文件夹目录树</h3><p>首先需要安装tree插件，mac下使用命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在需要生成树目录的文件下下执行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> tree -L &lt;展开层数&gt; &gt; &lt;生成目标文档&gt;</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Example: tree -L 3 &gt; catalog.md</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 打开文件复制代码</span></span><br></pre></td></tr></table></figure>
 <p>输出展示：</p>
 <p><img width = '250' height ='' src ="https://i.loli.net/2020/06/25/dWnH4QyP2oDOCvk.png"/></p>
 <p>(该文档不定时更新)</p>
-<section class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>Markdown 是一种纯文本标记语言<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>GitHub 是一个代码托管平台<a href="#fnref2" class="footnote-back">↩</a></p></li>
-</ol>
-</section>
 
     </div>
 
@@ -424,7 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文字格式"><span class="nav-number">1.</span> <span class="nav-text">文字格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片-链接"><span class="nav-number">3.</span> <span class="nav-text">图片 &amp; 链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">5.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待办标记"><span class="nav-number">6.</span> <span class="nav-text">待办标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注脚"><span class="nav-number">7.</span> <span class="nav-text">注脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程图"><span class="nav-number">8.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">9.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成文件夹目录树"><span class="nav-number">10.</span> <span class="nav-text">生成文件夹目录树</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文字格式"><span class="nav-number">1.</span> <span class="nav-text">文字格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片-amp-链接"><span class="nav-number">3.</span> <span class="nav-text">图片 &amp; 链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">5.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待办标记"><span class="nav-number">6.</span> <span class="nav-text">待办标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注脚"><span class="nav-number">7.</span> <span class="nav-text">注脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程图"><span class="nav-number">8.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">9.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成文件夹目录树"><span class="nav-number">10.</span> <span class="nav-text">生成文件夹目录树</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -505,13 +491,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">45k</span>
+    <span title="Symbols count total">49k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">41 mins.</span>
+    <span title="Reading time total">45 mins.</span>
 </div><script color="#222222" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
