@@ -161,6 +161,138 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://sharifxu.top/2020/10/01/Sort-Algo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Sharif Xu">
+      <meta itemprop="description" content="先学爬，后学走。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="爱喝茶的仙人掌">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/01/Sort-Algo/" class="post-title-link" itemprop="url">排序算法总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-01 16:00:19" itemprop="dateCreated datePublished" datetime="2020-10-01T16:00:19+08:00">2020-10-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-02 12:50:49" itemprop="dateModified" datetime="2020-10-02T12:50:49+08:00">2020-10-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/10/01/Sort-Algo/" class="post-meta-item leancloud_visitors" data-flag-title="排序算法总结" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/10/01/Sort-Algo/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/01/Sort-Algo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="插入排序">插入排序</h2>
+<blockquote>
+<p>插入排序的思想是每次将一个待排序列的元素按其关键字大小插入到前面已排好的序列中去，直到全部记录插入完成。</p>
+</blockquote>
+<h3 id="直接插入排序">直接插入排序</h3>
+<h4 id="算法思想及描述">算法思想及描述：</h4>
+<p>将待排序列逻辑结构分为前半部分有序（开始时前半部分元素个数为一），后半部分无序。</p>
+<p>步骤：</p>
+<ol type="1">
+<li>选取无序部分的第一个元素；</li>
+<li>逐步向前比较查找插入位置，并把已排序部分元素逐步向后移位；</li>
+<li>直到找到插入位置，为一趟插入排序；</li>
+<li>循环次数为无序序列的元素个数，在当前环境下为<span class="math inline">\(n-1\)</span>。</li>
+</ol>
+<p><img data-src="https://i.loli.net/2020/10/02/KXmGCaszHjlA8fy.gif"></p>
+<h4 id="伪代码">伪代码：</h4>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">2</span>; i &lt;=n; i++) &#123; <span class="comment">//依次将A[2]~A[n]插入到已排序序列</span></span><br><span class="line">    <span class="keyword">if</span> (A[i] &lt; A[i - <span class="number">1</span>]) &#123; <span class="comment">//元素值小于其前驱，需要进行插入操作</span></span><br><span class="line">      A[<span class="number">0</span>] = A[i]; <span class="comment">//A[0]为哨兵位，不存放元素，暂存元素</span></span><br><span class="line">      <span class="keyword">for</span>(j = i - <span class="number">1</span>; A[<span class="number">0</span>] &lt; A[j]; --j) &#123;</span><br><span class="line">        A[j + <span class="number">1</span>] = A[j]; <span class="comment">//后移操作</span></span><br><span class="line">      &#125;</span><br><span class="line">      A[j+<span class="number">1</span>] = A[<span class="number">0</span>]; <span class="comment">//复制到插入位置</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/01/Sort-Algo/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://sharifxu.top/2020/07/13/tree-structure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1182,7 +1314,7 @@ F(n-1)+F(n-2) &amp;&amp; n&gt;1
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1195,7 +1327,7 @@ F(n-1)+F(n-2) &amp;&amp; n&gt;1
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1247,13 +1379,13 @@ F(n-1)+F(n-2) &amp;&amp; n&gt;1
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">43k</span>
+    <span title="Symbols count total">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">39 mins.</span>
+    <span title="Reading time total">41 mins.</span>
 </div><script color="#222222" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
