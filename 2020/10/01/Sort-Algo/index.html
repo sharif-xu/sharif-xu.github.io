@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/10/02/jlCn3y8RovYgpwb.png">
 <meta property="og:image" content="https://i.loli.net/2020/10/02/bkD15Isv6mPyJqr.gif">
 <meta property="article:published_time" content="2020-10-01T08:00:19.000Z">
-<meta property="article:modified_time" content="2020-10-02T07:12:45.570Z">
+<meta property="article:modified_time" content="2020-10-12T12:12:20.436Z">
 <meta property="article:author" content="Sharif Xu">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Data Structure">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-02 15:12:45" itemprop="dateModified" datetime="2020-10-02T15:12:45+08:00">2020-10-02</time>
+                <time title="Modified: 2020-10-12 20:12:20" itemprop="dateModified" datetime="2020-10-12T20:12:20+08:00">2020-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -373,7 +373,7 @@
 <p>希尔排序的基本思想是：先将待排序表分割成若干形如<span class="math inline">\(L[i,i+d,i+2d,...,i+kd]\)</span>的“特殊”子表,即把相隔某个“增量”的记录组成一个子表，对各个子表分别进行直接插入排序，当整个表中的元素已呈“基本有序”时，再对全体记录进行一次直接插入排序。</p>
 <p><img data-src="https://i.loli.net/2020/10/02/zu2aGSpM9tN4TFl.png" /></p>
 <h4 id="伪代码-1">伪代码：</h4>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(ElemType A[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="comment">//一开始步长为n/2，每次循环，步长减半，最后步长为一时等于直接插入排序。</span></span><br><span class="line">  <span class="keyword">for</span>(dk = n / <span class="number">2</span>; dk &gt;= <span class="number">1</span>; dk = dk / <span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(i = dk + l; i &lt;= n; ++i) &#123; <span class="comment">//等同于一个分组内的直接插入排序</span></span><br><span class="line">      <span class="keyword">if</span>(A[i] &lt; A[i - dk])&#123; <span class="comment">//元素值小于其分组前驱 </span></span><br><span class="line">				A[<span class="number">0</span>] = A[i]; <span class="comment">//暂存在A[0]；</span></span><br><span class="line">				<span class="keyword">for</span>(j = i - dk; j&gt;<span class="number">0</span> &amp;&amp; A[O] &lt; A[j]; j -= dk) &#123;</span><br><span class="line">          A[j + dk] = A[j]; <span class="comment">//记录后移查找插入位置</span></span><br><span class="line">        &#125;</span><br><span class="line">        A[j + dk] = A[<span class="number">0</span>];<span class="comment">//插入</span></span><br><span class="line">    	&#125;<span class="comment">//if</span></span><br><span class="line">  	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(ElemType A[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="comment">//一开始步长为n/2，每次循环，步长减半，最后步长为一时等于直接插入排序。</span></span><br><span class="line">  <span class="keyword">for</span>(dk = n / <span class="number">2</span>; dk &gt;= <span class="number">1</span>; dk = dk / <span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(i = dk + l; i &lt;= n; ++i) &#123; <span class="comment">//等同于一个分组内的直接插入排序</span></span><br><span class="line">		<span class="keyword">if</span>(A[i] &lt; A[i - dk])&#123; <span class="comment">//元素值小于其分组前驱 </span></span><br><span class="line">				A[<span class="number">0</span>] = A[i]; <span class="comment">//暂存在A[0]；</span></span><br><span class="line">				<span class="keyword">for</span>(j = i - dk; j&gt;<span class="number">0</span> &amp;&amp; A[O] &lt; A[j]; j -= dk) &#123;</span><br><span class="line">					A[j + dk] = A[j]; <span class="comment">//记录后移查找插入位置</span></span><br><span class="line">				&#125;</span><br><span class="line">				A[j + dk] = A[<span class="number">0</span>];<span class="comment">//插入</span></span><br><span class="line">			&#125;<span class="comment">//if</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="时间复杂度分析-1">时间复杂度分析：</h4>
 <p>由于希尔排序的时间复杂度依赖于增量序列的函数，这涉及数学上尚未解决的难题，所以其时间复杂度分析比较困难。当n在某个特定范围时，希尔排序的时间复杂度约为<span class="math inline">\(O(n^{1.3})\)</span>，在最坏情况下希尔排序的时间复杂度为<span class="math inline">\(O(n^2)\)</span>。</p>
 <h4 id="特点-1">特点：</h4>
@@ -490,7 +490,10 @@
     <a href="/2020/07/13/tree-structure/" rel="prev" title="二叉树的遍历和线索二叉树">
       <i class="fa fa-chevron-left"></i> 二叉树的遍历和线索二叉树
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/22/Java-Reflection/" rel="next" title="理解Java的反射机制">
+      理解Java的反射机制 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -566,20 +569,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -621,7 +624,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-code"></i>
   </span>
@@ -631,13 +634,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">49k</span>
+    <span title="Symbols count total">51k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">44 mins.</span>
+    <span title="Reading time total">46 mins.</span>
 </div><script color="#222222" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
