@@ -184,10 +184,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-27 21:41:28 / Modified: 23:45:58" itemprop="dateCreated datePublished" datetime="2021-01-27T21:41:28+08:00">2021-01-27</time>
+              <time title="Created: 2021-01-27 21:41:28" itemprop="dateCreated datePublished" datetime="2021-01-27T21:41:28+08:00">2021-01-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-23 18:52:29" itemprop="dateModified" datetime="2021-02-23T18:52:29+08:00">2021-02-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -225,14 +231,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>3.1k</span>
+              <span>5.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -252,12 +258,7 @@
 <li>HashMap和HashTable的区别</li>
 </ul>
 <h3 id="hashmap的底层实现">HashMap的底层实现</h3>
-<p><img data-src="https://i.loli.net/2021/01/27/AhWHekIUxvJaDOY.png"></p>
-<p>由类的继承关系可知，HashMap继承至抽象类AbstractMap，并且实现了Cloneable以及Serializable两个接口。</p>
-<p>一开始HashMap采用Entry数组来存储key-value对，每一个键值对组成了一个Entry实体，Entry类实际上是一个单向的链表结构，它具有Next指针，可以连接下一个Entry实体，以此来解决Hash冲突的问题。（也可以说是采用链地址法来解决哈希冲突）。</p>
-<p><img data-src="https://i.loli.net/2021/01/27/rKc2ElZDfVbgvQn.png"></p>
-<p>在JDK1.7中，HashMap的实现方式做了一些改变，但是基本思想还是没有变得，只是在一些地方做了优化，数据结构的存储由数组+链表的方式，变化为数组+链表+红黑树的存储方式，当链表长度超过阈值（8）且数组长度超过阈值（64）时，将链表转换为红黑树。在性能上进一步得到提升。在JDK1.8中，将链节点和红黑树节点的插入由头插改为尾插。</p>
-<p><img data-src="https://i.loli.net/2021/01/27/n8O6fXRwF4MQLAD.png"></p>
+<p><img data-src="https://i.loli.net/2021/01/27/AhWHekIUxvJaDOY.png" /></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/01/27/AboutHashMap/#more" rel="contents">
@@ -1568,13 +1569,13 @@ F(n-1)+F(n-2) &amp;&amp; n&gt;1
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">54k</span>
+    <span title="Symbols count total">56k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">49 mins.</span>
+    <span title="Reading time total">51 mins.</span>
 </div><script color="#222222" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
