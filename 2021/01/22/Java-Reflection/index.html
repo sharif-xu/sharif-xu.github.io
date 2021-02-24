@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"sharifxu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="首先我们需要理解动态语言和静态语言  动态语言 是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。 主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。 静态语言 与动态语言相对应的，运行时结构不可变的语言就是静态语言。如">
+  <meta name="description" content="首先我们需要理解动态语言和静态语言  动态语言是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。 静态语言与动态语言相对应的，运行时结构不可变的语言就是静态语言。如Jav">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解Java的反射机制">
 <meta property="og:url" content="https://sharifxu.top/2021/01/22/Java-Reflection/index.html">
 <meta property="og:site_name" content="爱喝茶的仙人掌">
-<meta property="og:description" content="首先我们需要理解动态语言和静态语言  动态语言 是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。 主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。 静态语言 与动态语言相对应的，运行时结构不可变的语言就是静态语言。如">
+<meta property="og:description" content="首先我们需要理解动态语言和静态语言  动态语言是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。 静态语言与动态语言相对应的，运行时结构不可变的语言就是静态语言。如Jav">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/01/22/ERIbSKB98u3reVY.png">
 <meta property="article:published_time" content="2021-01-22T07:26:18.000Z">
@@ -258,36 +258,40 @@
 
       
         <p>首先我们需要理解动态语言和静态语言</p>
-<ol type="1">
-<li>动态语言 是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。 主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。</li>
-<li>静态语言 与动态语言相对应的，运行时结构不可变的语言就是静态语言。如Java（因为引入了反射机制，Java可以算是准动态语言）、C、C++。</li>
+<ol>
+<li>动态语言<br>是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。<br>主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。</li>
+<li>静态语言<br>与动态语言相对应的，运行时结构不可变的语言就是静态语言。如Java（因为引入了反射机制，Java可以算是准动态语言）、C、C++。</li>
 </ol>
-<p>反射机制允许程序在执行期间通过Reflection API取得任何类的内部信息，并能直接操作任意对象内部属性及方法。加载完类之后，在堆内存的方法区中就产生了一个Class类型的对象(一个类只有一个Class对象)，这个对象就包含了完整的类的结构信息。</p>
+<p>反射机制允许程序在执行期间通过Reflection API取得任何类的内部信息，并能直接操作任意对象内部属性及方法。加载完类之后，在堆内存的方法区中就产生了一个Class类型的对象(一个类只有一个Class对象)，这个对象就包含了完整的类的结构信息。 </p>
 <a id="more"></a>
-<p><img data-src="https://i.loli.net/2021/01/22/ERIbSKB98u3reVY.png" /></p>
-<h4 id="java反射机制提供的功能">Java反射机制提供的功能</h4>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对于给定Person类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="comment">//Field</span></span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	String nation;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Method</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"I'm a person."</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//Constructor</span></span><br><span class="line">	Person();</span><br><span class="line">	Person(String name， <span class="keyword">int</span> age);</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Person</span><span class="params">(String name)</span></span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://i.loli.net/2021/01/22/ERIbSKB98u3reVY.png" alt=""></p>
+<h4 id="Java反射机制提供的功能"><a href="#Java反射机制提供的功能" class="headerlink" title="Java反射机制提供的功能"></a>Java反射机制提供的功能</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对于给定Person类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="comment">//Field</span></span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	String nation;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Method</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"I'm a person."</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//Constructor</span></span><br><span class="line">	Person();</span><br><span class="line">	Person(String name， <span class="keyword">int</span> age);</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Person</span><span class="params">(String name)</span></span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>在运行时判断任意一个对象所属的类</p></li>
+<li><p>在运行时判断任意一个对象所属的类</p>
+</li>
 <li><p>在运行时构造任意一个类的对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Class clazz = Person<span class="class">.<span class="keyword">class</span></span>;Class clazz=Person<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line"><span class="comment">//1.通过反射，创建Person类的对象</span></span><br><span class="line">Constructor cons=clazz.getConstructor(String<span class="class">.<span class="keyword">class</span>，<span class="title">int</span>.<span class="title">class</span>)</span>;</span><br><span class="line">Object obj=cons.newInstance(<span class="string">"Tom"</span>，<span class="number">12</span>);</span><br><span class="line">Person p=(Person)obj;</span><br><span class="line">System.out.println(p.tostring());</span><br></pre></td></tr></table></figure></li>
-<li><p>在运行时判断任意一个类所具有的成员变量和方法</p></li>
-<li><p>在运行时获取泛型信息</p></li>
-<li><p>在运行时调用任意一个对象的成员变量和方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过反射，调用对象指定的属性，方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//调用成员变量</span></span><br><span class="line">Field age=clazz.getDeclaredField(<span class="string">"age"</span>);</span><br><span class="line">age.set(p，<span class="number">10</span>);</span><br><span class="line">System.out.println(p.tostring());</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line">Method show=clazz.getDeclaredMethod(<span class="string">"show"</span>);</span><br><span class="line">show.invoke(p);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过反射调用私有的构造器，方法，属性</span></span><br><span class="line">Constructor cons1=clazz.getDeclaredConstructor(String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">cons1.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">Person p1=(Person)cons1.newInstance(<span class="string">"Jerry"</span>);</span><br><span class="line">System.out.println(p1);</span><br></pre></td></tr></table></figure></li>
-<li>在运行时处理注解</li>
-<li><p>生成动态代理</p></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Class clazz = Person<span class="class">.<span class="keyword">class</span></span>;Class clazz=Person<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line"><span class="comment">//1.通过反射，创建Person类的对象</span></span><br><span class="line">Constructor cons=clazz.getConstructor(String<span class="class">.<span class="keyword">class</span>，<span class="title">int</span>.<span class="title">class</span>)</span>;</span><br><span class="line">Object obj=cons.newInstance(<span class="string">"Tom"</span>，<span class="number">12</span>);</span><br><span class="line">Person p=(Person)obj;</span><br><span class="line">System.out.println(p.tostring());</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h4 id="关于java.lang.class类的理解">关于java.lang.CLass类的理解</h4>
-<ol type="1">
-<li>类的加载过程: 程序经过javac.exe命令以后，会生成一个或多个字节码文件(.class结尾)。 接着我们使用java.exe命令对某个字芦码文件迸行解释运行。相当于将某个字节码文件加载到内存中。此过程就称为类的加载。加载到内存中的类， 我们就秋为运行时类，此运行时类，就作为CLass的一个实例。</li>
+<ul>
+<li><p>在运行时判断任意一个类所具有的成员变量和方法</p>
+</li>
+<li><p>在运行时获取泛型信息</p>
+</li>
+<li><p>在运行时调用任意一个对象的成员变量和方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过反射，调用对象指定的属性，方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//调用成员变量</span></span><br><span class="line">Field age=clazz.getDeclaredField(<span class="string">"age"</span>);</span><br><span class="line">age.set(p，<span class="number">10</span>);</span><br><span class="line">System.out.println(p.tostring());</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line">Method show=clazz.getDeclaredMethod(<span class="string">"show"</span>);</span><br><span class="line">show.invoke(p);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过反射调用私有的构造器，方法，属性</span></span><br><span class="line">Constructor cons1=clazz.getDeclaredConstructor(String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">cons1.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">Person p1=(Person)cons1.newInstance(<span class="string">"Jerry"</span>);</span><br><span class="line">System.out.println(p1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在运行时处理注解</p>
+</li>
+<li>生成动态代理</li>
+</ul>
+<h4 id="关于java-lang-CLass类的理解"><a href="#关于java-lang-CLass类的理解" class="headerlink" title="关于java.lang.CLass类的理解"></a>关于java.lang.CLass类的理解</h4><ol>
+<li>类的加载过程:<br>程序经过javac.exe命令以后，会生成一个或多个字节码文件(.class结尾)。<br>接着我们使用java.exe命令对某个字芦码文件迸行解释运行。相当于将某个字节码文件加载到内存中。此过程就称为类的加载。加载到内存中的类， 我们就秋为运行时类，此运行时类，就作为CLass的一个实例。</li>
 <li>换句话说，CLass的实例就对应着一个运行时类。</li>
 <li>加载到内存中的运行时类，会缓存一定的时间。在此时间之内，我们可以通过不同的方式来获取此运行时类。</li>
 </ol>
-<h4 id="获取class实例的四种方式">获取Class实例的四种方式</h4>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一:调用运行时类的属性:.class</span></span><br><span class="line">Class clazz1 = Person<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line">System.out.println(clazz1);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式二:通过运行附类的对象，调用getClass()</span></span><br><span class="line">Person p1=<span class="keyword">new</span> Person();</span><br><span class="line">Class clazz2=pl.getclass();</span><br><span class="line">System.out.println(clazz2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式三:调用CLass的静态方法:forName(String classPath)</span></span><br><span class="line">Class clazz3=Class.forName(<span class="string">"com.demo.java.Person"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式四:使用类的加载器:CLassLoader</span></span><br><span class="line">ClassLoader classLoader=ReflectionTest<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>()</span>;</span><br><span class="line">Class clazz4=classLoader.loadClass(name:<span class="string">"com.demo.java.Person"</span>);</span><br><span class="line">System.out.println(clazz4);</span><br><span class="line">System.out.println(clazz1==clazz4);</span><br></pre></td></tr></table></figure>
-<h5 id="什么时候使用反射构造对象">什么时候使用反射构造对象？</h5>
-<p>在运行时无法确定对象的类型，需要根据动态运行结果去实时调整构造对象的时候，才去使用反射方式。比如在前端发来请求时，根据pattern，通过反射的方式构造。</p>
+<h4 id="获取Class实例的四种方式"><a href="#获取Class实例的四种方式" class="headerlink" title="获取Class实例的四种方式"></a>获取Class实例的四种方式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一:调用运行时类的属性:.class</span></span><br><span class="line">Class clazz1 = Person<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line">System.out.println(clazz1);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式二:通过运行附类的对象，调用getClass()</span></span><br><span class="line">Person p1=<span class="keyword">new</span> Person();</span><br><span class="line">Class clazz2=pl.getclass();</span><br><span class="line">System.out.println(clazz2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式三:调用CLass的静态方法:forName(String classPath)</span></span><br><span class="line">Class clazz3=Class.forName(<span class="string">"com.demo.java.Person"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式四:使用类的加载器:CLassLoader</span></span><br><span class="line">ClassLoader classLoader=ReflectionTest<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>()</span>;</span><br><span class="line">Class clazz4=classLoader.loadClass(name:<span class="string">"com.demo.java.Person"</span>);</span><br><span class="line">System.out.println(clazz4);</span><br><span class="line">System.out.println(clazz1==clazz4);</span><br></pre></td></tr></table></figure>
+<h5 id="什么时候使用反射构造对象？"><a href="#什么时候使用反射构造对象？" class="headerlink" title="什么时候使用反射构造对象？"></a>什么时候使用反射构造对象？</h5><p>在运行时无法确定对象的类型，需要根据动态运行结果去实时调整构造对象的时候，才去使用反射方式。比如在前端发来\login 请求时，根据pattern，通过反射的方式构造\login对应的后台对象。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequiresPermissions</span>(<span class="string">"system:post:list"</span>)</span><br><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/list"</span>) <span class="comment">//此处就采用了反射方式</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TableDataInfo <span class="title">list</span><span class="params">(SysPost post)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  startPage();</span><br><span class="line">  List&lt;SysPost&gt; list = postService.selectPostList(post);</span><br><span class="line">  <span class="keyword">return</span> getDataTable(list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -375,7 +379,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#java反射机制提供的功能"><span class="nav-number">1.</span> <span class="nav-text">Java反射机制提供的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于java.lang.class类的理解"><span class="nav-number">2.</span> <span class="nav-text">关于java.lang.CLass类的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取class实例的四种方式"><span class="nav-number">3.</span> <span class="nav-text">获取Class实例的四种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候使用反射构造对象"><span class="nav-number">3.1.</span> <span class="nav-text">什么时候使用反射构造对象？</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java反射机制提供的功能"><span class="nav-number">1.</span> <span class="nav-text">Java反射机制提供的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于java-lang-CLass类的理解"><span class="nav-number">2.</span> <span class="nav-text">关于java.lang.CLass类的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取Class实例的四种方式"><span class="nav-number">3.</span> <span class="nav-text">获取Class实例的四种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候使用反射构造对象？"><span class="nav-number">3.1.</span> <span class="nav-text">什么时候使用反射构造对象？</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -391,20 +395,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -456,13 +460,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">56k</span>
+    <span title="Symbols count total">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">51 mins.</span>
+    <span title="Reading time total">55 mins.</span>
 </div><script color="#222222" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
