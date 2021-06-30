@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-30 15:37:43 / Modified: 16:01:15" itemprop="dateCreated datePublished" datetime="2021-06-30T15:37:43+08:00">2021-06-30</time>
+              <time title="Created: 2021-06-30 15:37:43 / Modified: 16:05:21" itemprop="dateCreated datePublished" datetime="2021-06-30T15:37:43+08:00">2021-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>697</span>
+              <span>698</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -244,16 +244,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。在网上搜寻解决方案后成功解决总结一下。</p>
-<p>可以通过命令<code>jupyter kernelspec list</code> 来查询当前Jupyter Notebook支持的kernel环境。</p>
-<p><img data-src="https://i.loli.net/2021/06/30/QmLd36gKxTivtCb.png"></p>
-<p>可以看到目前只支持本机的Python3环境</p>
-<p>首先自然是创建一个虚拟的conda环境，python=3.6.2，我创建的虚拟环境名称是NNstarter。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base)conda create -n NNstarter python=3.6.2</span><br></pre></td></tr></table></figure>
-<p>第一步，在base环境执行命令，安装nb_conda插件。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base)conda install nb_conda</span><br></pre></td></tr></table></figure>
-<p>第二步，进入虚拟环境NNstarter，安装ipykernel插件，（用于提供 Jupyter 运行所需的 IPython kernel）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(NNstarter)conda activate NNstarter</span><br><span class="line">(NNstarter)pip install --user ipykernel</span><br></pre></td></tr></table></figure>
+          <p>最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。</p>
+<p>该问题已成功解决，本文总结一下解决方法。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/06/30/JupyterNoteWithAnaconda/#more" rel="contents">

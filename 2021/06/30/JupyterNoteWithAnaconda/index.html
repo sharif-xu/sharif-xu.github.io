@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"sharifxu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。在网上搜寻解决方案后成功解决总结一下。 可以通过命令jupyter kernelspec list 来查询当前Jupyter Notebook支持的kernel环境。  可以看到目前只支持本机的Python3环">
+  <meta name="description" content="最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。 该问题已成功解决，本文总结一下解决方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Jupyter Notebook中使用Anaconda创建的虚拟环境">
 <meta property="og:url" content="https://sharifxu.top/2021/06/30/JupyterNoteWithAnaconda/index.html">
 <meta property="og:site_name" content="爱喝茶的仙人掌">
-<meta property="og:description" content="最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。在网上搜寻解决方案后成功解决总结一下。 可以通过命令jupyter kernelspec list 来查询当前Jupyter Notebook支持的kernel环境。  可以看到目前只支持本机的Python3环">
+<meta property="og:description" content="最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。 该问题已成功解决，本文总结一下解决方法。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/06/30/QmLd36gKxTivtCb.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/30/eEGAq9ylWfUY5mM.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/30/nT8bIpwckqMH2F4.png">
 <meta property="article:published_time" content="2021-06-30T07:37:43.000Z">
-<meta property="article:modified_time" content="2021-06-30T08:01:15.105Z">
+<meta property="article:modified_time" content="2021-06-30T08:05:21.030Z">
 <meta property="article:author" content="Sharif Xu">
 <meta property="article:tag" content="JupyterNoteBook">
 <meta property="article:tag" content="Anaconda">
@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-30 15:37:43 / Modified: 16:01:15" itemprop="dateCreated datePublished" datetime="2021-06-30T15:37:43+08:00">2021-06-30</time>
+              <time title="Created: 2021-06-30 15:37:43 / Modified: 16:05:21" itemprop="dateCreated datePublished" datetime="2021-06-30T15:37:43+08:00">2021-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +240,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>697</span>
+              <span>698</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -259,7 +259,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。在网上搜寻解决方案后成功解决总结一下。</p>
+        <p>最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。</p>
+<p>该问题已成功解决，本文总结一下解决方法。</p>
+<a id="more"></a>
 <p>可以通过命令<code>jupyter kernelspec list</code> 来查询当前Jupyter Notebook支持的kernel环境。</p>
 <p><img data-src="https://i.loli.net/2021/06/30/QmLd36gKxTivtCb.png" /></p>
 <p>可以看到目前只支持本机的Python3环境</p>
