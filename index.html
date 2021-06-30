@@ -161,6 +161,125 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://sharifxu.top/2021/06/30/JupyterNoteWithAnaconda/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Sharif Xu">
+      <meta itemprop="description" content="先学爬，后学走。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="爱喝茶的仙人掌">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/JupyterNoteWithAnaconda/" class="post-title-link" itemprop="url">在Jupyter Notebook中使用Anaconda创建的虚拟环境</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-06-30 15:37:43 / Modified: 16:01:15" itemprop="dateCreated datePublished" datetime="2021-06-30T15:37:43+08:00">2021-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Reference/" itemprop="url" rel="index"><span itemprop="name">Reference</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/06/30/JupyterNoteWithAnaconda/" class="post-meta-item leancloud_visitors" data-flag-title="在Jupyter Notebook中使用Anaconda创建的虚拟环境" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/06/30/JupyterNoteWithAnaconda/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/06/30/JupyterNoteWithAnaconda/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>697</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近在学习吴恩达神经网络和深度网络相关内容，遇到一个问题，因为使用的是Jupyter Notebook进行编码，创建第三方环境后Jupyter默认调用的Kernel还是本地Python环境。在网上搜寻解决方案后成功解决总结一下。</p>
+<p>可以通过命令<code>jupyter kernelspec list</code> 来查询当前Jupyter Notebook支持的kernel环境。</p>
+<p><img data-src="https://i.loli.net/2021/06/30/QmLd36gKxTivtCb.png"></p>
+<p>可以看到目前只支持本机的Python3环境</p>
+<p>首先自然是创建一个虚拟的conda环境，python=3.6.2，我创建的虚拟环境名称是NNstarter。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base)conda create -n NNstarter python=3.6.2</span><br></pre></td></tr></table></figure>
+<p>第一步，在base环境执行命令，安装nb_conda插件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base)conda install nb_conda</span><br></pre></td></tr></table></figure>
+<p>第二步，进入虚拟环境NNstarter，安装ipykernel插件，（用于提供 Jupyter 运行所需的 IPython kernel）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(NNstarter)conda activate NNstarter</span><br><span class="line">(NNstarter)pip install --user ipykernel</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/30/JupyterNoteWithAnaconda/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://sharifxu.top/2021/04/22/PostgraduateEntranceExam/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -186,7 +305,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-22 14:58:07 / Modified: 15:20:16" itemprop="dateCreated datePublished" datetime="2021-04-22T14:58:07+08:00">2021-04-22</time>
+              <time title="Created: 2021-04-22 14:58:07 / Modified: 15:25:27" itemprop="dateCreated datePublished" datetime="2021-04-22T14:58:07+08:00">2021-04-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -357,7 +476,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="日期和ID的双射问题"><a href="#日期和ID的双射问题" class="headerlink" title="日期和ID的双射问题"></a>日期和ID的双射问题</h3><blockquote>
+          <h3 id="日期和id的双射问题">日期和ID的双射问题</h3>
+<blockquote>
 <p>Description：假设日期1969.01.01用0表示，请开发一个函数输出任意日期的整数表示（日期小于1969.01.01的用负数表示）。反过来，给定日期的整数表示，开发一个函数求日期对应的年月日。</p>
 </blockquote>
           <!--noindex-->
@@ -482,7 +602,8 @@
 <li>HashMap的扩容机制</li>
 <li>HashMap和HashTable的区别</li>
 </ul>
-<h3 id="HashMap的底层实现"><a href="#HashMap的底层实现" class="headerlink" title="HashMap的底层实现"></a>HashMap的底层实现</h3><p><img data-src="https://i.loli.net/2021/01/27/AhWHekIUxvJaDOY.png" alt=""></p>
+<h3 id="hashmap的底层实现">HashMap的底层实现</h3>
+<p><img data-src="https://i.loli.net/2021/01/27/AhWHekIUxvJaDOY.png" /></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/01/27/AboutHashMap/#more" rel="contents">
@@ -593,11 +714,11 @@
 
       
           <p>首先我们需要理解动态语言和静态语言</p>
-<ol>
-<li>动态语言<br>是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。<br>主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。</li>
-<li>静态语言<br>与动态语言相对应的，运行时结构不可变的语言就是静态语言。如Java（因为引入了反射机制，Java可以算是准动态语言）、C、C++。</li>
+<ol type="1">
+<li>动态语言 是一类在运行时可以改变其结构的语言: 例如新的函数、对象、甚至新的代码可以被引进，已有的函数可以被删除或是发生其他结构上的变化。 通俗点说就是在运行时代码可以根据某些条件改变自身结构。 主要动态语言:Object-C，C#，JavaScript，PHP，Python，Erlang。</li>
+<li>静态语言 与动态语言相对应的，运行时结构不可变的语言就是静态语言。如Java（因为引入了反射机制，Java可以算是准动态语言）、C、C++。</li>
 </ol>
-<p>反射机制允许程序在执行期间通过Reflection API取得任何类的内部信息，并能直接操作任意对象内部属性及方法。加载完类之后，在堆内存的方法区中就产生了一个Class类型的对象(一个类只有一个Class对象)，这个对象就包含了完整的类的结构信息。 </p>
+<p>反射机制允许程序在执行期间通过Reflection API取得任何类的内部信息，并能直接操作任意对象内部属性及方法。加载完类之后，在堆内存的方法区中就产生了一个Class类型的对象(一个类只有一个Class对象)，这个对象就包含了完整的类的结构信息。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/01/22/Java-Reflection/#more" rel="contents">
@@ -694,7 +815,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5.5k</span>
+              <span>5.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -713,10 +834,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <div class="table-container">
-<table>
+          <table>
 <thead>
-<tr>
+<tr class="header">
 <th>排序算法</th>
 <th>平均时间复杂度</th>
 <th>最坏时间复杂度</th>
@@ -725,65 +845,64 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>插入排序</td>
-<td>$O(n^2)$</td>
-<td>$O(n^2)$</td>
-<td>$O(1)$</td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
 <td>稳定</td>
 </tr>
-<tr>
+<tr class="even">
 <td>希尔排序</td>
-<td>$O(n^{1.3})$</td>
-<td>$O(n^2)$</td>
-<td>$O(1)$</td>
+<td><span class="math inline">\(O(n^{1.3})\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
 <td>不稳定</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>快速排序</td>
-<td>$O(nlogn)$</td>
-<td>$O(n^2)$</td>
-<td>$O(logn)$</td>
+<td><span class="math inline">\(O(nlogn)\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(logn)\)</span></td>
 <td>不稳定</td>
 </tr>
-<tr>
+<tr class="even">
 <td>冒泡排序</td>
-<td>$O(n^2)$</td>
-<td>O$(n^2)$</td>
-<td>$O(1)$</td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td>O<span class="math inline">\((n^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
 <td>稳定</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>选择排序</td>
-<td>$O(n^2)$</td>
-<td>$O(n^2)$</td>
-<td>$O(1)$</td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(n^2)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
 <td>不稳定</td>
 </tr>
-<tr>
+<tr class="even">
 <td>堆排序</td>
-<td>$O(nlogn)$</td>
-<td>$O(nlogn)$</td>
-<td>$O(1)$</td>
+<td><span class="math inline">\(O(nlogn)\)</span></td>
+<td><span class="math inline">\(O(nlogn)\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
 <td>不稳定</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>归并排序</td>
-<td>$O(nlogn)$</td>
-<td>$O(nlogn)$</td>
-<td>$O(n)$</td>
+<td><span class="math inline">\(O(nlogn)\)</span></td>
+<td><span class="math inline">\(O(nlogn)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
 <td>稳定</td>
 </tr>
-<tr>
+<tr class="even">
 <td>基数排序</td>
-<td>$O(d(n+r))$</td>
-<td>$O(d(n+r))$</td>
-<td>$O(r)$</td>
+<td><span class="math inline">\(O(d(n+r))\)</span></td>
+<td><span class="math inline">\(O(d(n+r))\)</span></td>
+<td><span class="math inline">\(O(r)\)</span></td>
 <td>不稳定</td>
 </tr>
 </tbody>
 </table>
-</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/10/01/Sort-Algo/#more" rel="contents">
@@ -900,15 +1019,16 @@
 
       
           <p>本文主要讨论二叉树的四种遍历方式，以及对应线索二叉树的构造以及遍历过程。</p>
-<h4 id="先序遍历（PreOrder）"><a href="#先序遍历（PreOrder）" class="headerlink" title="先序遍历（PreOrder）"></a>先序遍历（PreOrder）</h4><p>算法逻辑：（NLR）</p>
-<ol>
+<h4 id="先序遍历preorder">先序遍历（PreOrder）</h4>
+<p>算法逻辑：（NLR）</p>
+<ol type="1">
 <li>首先访问根结点；</li>
 <li>先序遍历左子树；</li>
 <li>先序遍历右子树。</li>
 </ol>
 <p>由此可以简单写出对应递归算法：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(BinTree T)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(T != null) &#123;</span><br><span class="line">    visit(T);</span><br><span class="line">    PreOrder(T -&gt; lchild);</span><br><span class="line">    PreOrder(T -&gt; rchild);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>因为每个节点都被访问一次，所以时间复杂度为$O(n)$，递归工作栈的深度恰好为树的深度，所以最坏情况是树为单链树时空间复杂度为$O(n)$。</p>
+<p>因为每个节点都被访问一次，所以时间复杂度为<span class="math inline">\(O(n)\)</span>，递归工作栈的深度恰好为树的深度，所以最坏情况是树为单链树时空间复杂度为<span class="math inline">\(O(n)\)</span>。</p>
 <p>接下来使用非递归方式实现二叉树的先序遍历：</p>
           <!--noindex-->
             <div class="post-button">
@@ -1025,13 +1145,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="利用一个栈实现以下递归函数的非递归计算："><a href="#利用一个栈实现以下递归函数的非递归计算：" class="headerlink" title="利用一个栈实现以下递归函数的非递归计算："></a>利用一个栈实现以下递归函数的非递归计算：</h5><script type="math/tex; mode=display">
+          <h5 id="利用一个栈实现以下递归函数的非递归计算">利用一个栈实现以下递归函数的非递归计算：</h5>
+<p><span class="math display">\[
 P_n(x)=\left\{
 \begin{array}{aligned}
-1, && n=0 \\
-2x, && n=1\\
-2xP_{n-1}(x)-2(n-1)P_{n-2}(x), && n>1
-\end{array} \right.</script><p> 首先我们定义栈的初始结构，栈应该要记录每次对应的n值，和函数值。</p>
+1, &amp;&amp; n=0 \\
+2x, &amp;&amp; n=1\\
+2xP_{n-1}(x)-2(n-1)P_{n-2}(x), &amp;&amp; n&gt;1
+\end{array} \right.
+\]</span></p>
+<p>首先我们定义栈的初始结构，栈应该要记录每次对应的n值，和函数值。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">double</span> val;</span><br><span class="line">&#125; st[maxsize];</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -1136,7 +1259,7 @@ P_n(x)=\left\{
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>13 mins.</span>
+              <span>14 mins.</span>
             </span>
 
         </div>
@@ -1148,7 +1271,8 @@ P_n(x)=\left\{
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。"><a href="#设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。" class="headerlink" title="设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。"></a>设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。</h5><p>算法的代码描述如下：</p>
+          <h5 id="设计一个递归算法删除不带头结点的单链表l中所有值为x的结点">设计一个递归算法，删除不带头结点的单链表L中所有值为x的结点。</h5>
+<p>算法的代码描述如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleteRecursive</span><span class="params">(LNode &amp;p, Elemtype x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (p == null) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (p-&gt;data == x) &#123;</span><br><span class="line">    LNode temp = p; </span><br><span class="line">    p = p-&gt;next; <span class="comment">//在此处思考上层递归，会补链</span></span><br><span class="line">    <span class="built_in">free</span>(temp); </span><br><span class="line">    deleteRecursive(p, x);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    deleteRecursive(p-&gt;next, x);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -1246,7 +1370,7 @@ P_n(x)=\left\{
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>6.9k</span>
+              <span>7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1265,134 +1389,12 @@ P_n(x)=\left\{
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="从顺序表中删除具有最小值的元素-假设唯一-并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。"><a href="#从顺序表中删除具有最小值的元素-假设唯一-并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。" class="headerlink" title="从顺序表中删除具有最小值的元素(假设唯一)并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。"></a>从顺序表中删除具有最小值的元素(假设唯一)并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。</h5><p>算法的代码描述如下：</p>
-   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Elemtype <span class="title">deleteMin</span><span class="params">(Sqlist &amp;arr)</span> </span>&#123; <span class="comment">//可以考虑形参中引入 &amp;min，</span></span><br><span class="line">  <span class="keyword">if</span> (arr.length == <span class="number">0</span> &amp;&amp; arr == null) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The array is empty."</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    Elemtype <span class="built_in">min</span> = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= arr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] &lt;= <span class="built_in">min</span>) &#123;</span><br><span class="line">        <span class="built_in">min</span> = arr[i];</span><br><span class="line">        index = i;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[index] = arr[arr.length - <span class="number">1</span>];</span><br><span class="line">    arr.length--;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h5 id="从顺序表中删除具有最小值的元素假设唯一并由函数返回被删元素的值空出的位置由最后一个元素填补若顺序表为空则显示出错信息并退出运行">从顺序表中删除具有最小值的元素(假设唯一)并由函数返回被删元素的值。空出的位置由最后一个元素填补，若顺序表为空则显示出错信息并退出运行。</h5>
+<p>算法的代码描述如下：</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Elemtype <span class="title">deleteMin</span><span class="params">(Sqlist &amp;arr)</span> </span>&#123; <span class="comment">//可以考虑形参中引入 &amp;min，</span></span><br><span class="line">  <span class="keyword">if</span> (arr.length == <span class="number">0</span> &amp;&amp; arr == null) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The array is empty."</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    Elemtype <span class="built_in">min</span> = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= arr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] &lt;= <span class="built_in">min</span>) &#123;</span><br><span class="line">        <span class="built_in">min</span> = arr[i];</span><br><span class="line">        index = i;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[index] = arr[arr.length - <span class="number">1</span>];</span><br><span class="line">    arr.length--;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/23/Linear-List-Sequence/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://sharifxu.top/2020/06/09/Fibonacci/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Sharif Xu">
-      <meta itemprop="description" content="先学爬，后学走。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="爱喝茶的仙人掌">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/09/Fibonacci/" class="post-title-link" itemprop="url">递归和非递归算法求解Fibonacci数列</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-09 12:00:00" itemprop="dateCreated datePublished" datetime="2020-06-09T12:00:00+08:00">2020-06-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-16 22:18:16" itemprop="dateModified" datetime="2020-07-16T22:18:16+08:00">2020-07-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/09/Fibonacci/" class="post-meta-item leancloud_visitors" data-flag-title="递归和非递归算法求解Fibonacci数列" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/06/09/Fibonacci/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/09/Fibonacci/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>对于Fibonacci数列</p>
-<script type="math/tex; mode=display">
-F(n)=\left\{
-\begin{array}{aligned}
-1 && n=0,1 \\
-F(n-1)+F(n-2) && n>1
-\end{array} \right.</script><p>我们可以采用递归以及非递归的方法对其进行求解。</p>
-<p>下面分别用两种方法求解，并分析算法的时间复杂度。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/09/Fibonacci/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1483,7 +1485,7 @@ F(n-1)+F(n-2) && n>1
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1496,7 +1498,7 @@ F(n-1)+F(n-2) && n>1
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1548,13 +1550,13 @@ F(n-1)+F(n-2) && n>1
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">64k</span>
+    <span title="Symbols count total">65k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">58 mins.</span>
+    <span title="Reading time total">59 mins.</span>
 </div><script color="#222222" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
